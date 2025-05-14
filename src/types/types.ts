@@ -17,10 +17,11 @@ export type ProductType = {
 }
 
 export type AddressType = {
-  cep: string
-  logradouro: string
   bairro: string
+  cep: string
+  estado:string
   localidade: string
+  logradouro: string
   uf: string
   erro?: boolean
 }
