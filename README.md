@@ -39,3 +39,8 @@ cd montink_ecommerce
 2. **Rodando o projeto**
 
 npm run dev
+
+## Visualizção do Projeto
+ - É possivel ver o funcionamento do projeto através do link abaixo
+  
+  https://montinkecommerce.netlify.app/
