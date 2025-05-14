@@ -12,7 +12,9 @@ type ProductImages = {
 export type ProductType = {
   id: number
   name: string
-  price: number
+  price: number,
+  sizes: string[]
+  colors: string[]
   images: ProductImages[]
 }
 

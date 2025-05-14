@@ -10,6 +10,8 @@ export const Product: ProductType[] = [
     id: 1,
     name: 'Camisa Básica Masculina',
     price: 24.99,
+    sizes: ['P', 'M', 'G', 'GG'],
+    colors: ['Branca', 'Cinza', 'Preto', 'Vermelho', 'Verde'],
     images: [
       {
         data: [

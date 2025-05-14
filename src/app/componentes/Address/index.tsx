@@ -1,13 +1,26 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { AddressType } from '@/types/types'
 import { insertMaskInCEP } from '@/functions/address'
+import { timeStamp } from 'console'
 
 export default function Address() {
   const [cep, setCep] = useState('')
   const [address, setAddress] = useState<AddressType | null>(null)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    const save = localStorage.getItem('@storage_address')
+    if(save){
+      const { data, timestamp  } = JSON.parse(save)
+      if(Date.now() - timestamp < 15 * 60 * 1000){
+        setAddress(data)
+      } else {
+        localStorage.removeItem('@storage_address')
+      }
+    }
+  }, [])
 
   const handleAddress = async () => {
     const cleanCEP = cep.replace(/\D/g, '')
@@ -29,6 +42,7 @@ export default function Address() {
       } else {
         setError('');
         setAddress(data);
+        localStorage.setItem('@storage_address', JSON.stringify({data, timestamp: Date.now()}))
       }
     } 
 
@@ -39,7 +53,7 @@ export default function Address() {
   }
 
   return (
-    <div className='mt-10 w-full max-w-5xl m-auto py-10 px-10 '>
+    <div className='mb-10 w-full max-w-5xl m-auto py-10 px-10 '>
       <h3 className='text-2xl font-bold mb-5'>Verificar endereço</h3>
 
       <div className='flex gap-2'>
