@@ -10,8 +10,17 @@ type ProductImages = {
 }
 
 export type ProductType = {
-  id: number;
-  name: string;
-  price: number;
+  id: number
+  name: string
+  price: number
   images: ProductImages[]
+}
+
+export type AddressType = {
+  cep: string
+  logradouro: string
+  bairro: string
+  localidade: string
+  uf: string
+  erro?: boolean
 }

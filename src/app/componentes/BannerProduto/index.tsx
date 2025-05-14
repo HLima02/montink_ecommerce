@@ -35,7 +35,8 @@ export default function BannerProduto() {
   }
   return (
     <div className=' w-full max-w-5xl m-auto py-10 px-10 sm:px-20'>
-      <h2 className='text-3xl mb-5 font-bold'>{Product[0].name}</h2>
+      <h2 className='text-3xl mb-1 font-bold'>{Product[0].name}</h2>
+      <p className='text-xl font-bold mb-5'>R$ {Product[0].price}</p>
       <Slider {...settings} className='max-w-full xl:max-w-1/2 flex flex-col'>
         {image.map((item) => (
           <div key={item.id} className="relative w-full h-96">
