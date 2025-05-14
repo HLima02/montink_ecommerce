@@ -1,0 +1,13 @@
+.slick-dots li {
+  width: auto !important;
+}
+
+.slick-prev, .slick-next {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  border: none;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

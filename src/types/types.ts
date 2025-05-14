@@ -6,7 +6,6 @@ type ProductImageData = {
 }
 
 type ProductImages = {
-  id: number,
   data: ProductImageData[]
 }
 
